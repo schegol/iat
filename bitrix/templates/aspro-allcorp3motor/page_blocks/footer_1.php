@@ -18,7 +18,7 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 	<div class="footer__main-part">
 		<div class="maxwidth-theme">
 			<div class="footer__main-part-inner">
-				<div class="footer__part-item flex-33-1200">
+				<div class="footer__part-item flex-33-1200 a1">
 					<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 						array(
 							"COMPONENT_TEMPLATE" => ".default",
@@ -32,7 +32,7 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 					);?>
 				</div>
 
-				<div class="footer__part-item flex-33-1200">
+				<div class="footer__part-item flex-33-1200 a2">
 					<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 						array(
 							"COMPONENT_TEMPLATE" => ".default",
@@ -46,7 +46,7 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 					);?>
 				</div>
 
-				<div class="footer__part-item flex-33-1200">
+				<div class="footer__part-item flex-33-1200 a3">
 					<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 						array(
 							"COMPONENT_TEMPLATE" => ".default",
@@ -60,7 +60,7 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 					);?>
 				</div>
 
-				<div class="footer__part-item flex-50-1200">
+				<div class="footer__part-item flex-50-1200 a4">
 					<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 						array(
 							"COMPONENT_TEMPLATE" => ".default",
