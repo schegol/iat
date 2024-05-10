@@ -1,0 +1,289 @@
+.owl-carousel__dot.active::after {
+  border-color: #00aabc;
+}
+a.grey {
+  color: #818181;
+}
+a.grey:hover {
+  color: #00aabc;
+}
+.dark_link:hover {
+  color: #00aabc;
+}
+.btn-inline {
+  color: #00aabc;
+}
+.btn-inline.black:hover {
+  color: #00aabc;
+}
+.btn-inline.rounded:hover i {
+  background: #00aabc;
+}
+body .fa.big-icon {
+  background: #00aabc;
+}
+body .fa.big-icon.grey {
+  color: #00aabc;
+  background: #efefef;
+}
+.icon-text {
+  color: #fff;
+  background: #00aabc;
+}
+.icon-text .fa {
+  color: #fff;
+}
+.icon-text.grey {
+  color: #222;
+  background: #efefef;
+}
+.icon-text.grey .fa {
+  color: #00aabc;
+}
+a.scroll-to-top.ROUND_COLOR,
+a.scroll-to-top.RECT_COLOR {
+  background-color: #00aabc;
+}
+a.scroll-to-top.ROUND_COLOR:hover,
+a.scroll-to-top.RECT_COLOR:hover {
+  background-color: #00cfe5;
+}
+.underline {
+  border-bottom: 2px solid #00aabc;
+}
+blockquote::before {
+  color: #00aabc;
+}
+.review .it:before {
+  color: #00aabc;
+}
+.styled-block {
+  border-left-color: #00aabc;
+}
+.list.icons .fa {
+  color: #00aabc;
+}
+table.table th {
+  background-color: #00aabc;
+}
+hr.colored_line {
+  border-color: #00aabc;
+}
+.label.label-default {
+  background: #93a6bc;
+}
+.label.label-primary {
+  background: #b8c2cd;
+}
+.label.label-success {
+  background: #5cb85c;
+}
+.label.label-warning {
+  background: #f0ad4e;
+}
+.label.label-danger {
+  background: #d9534f;
+}
+.svg.colored svg path {
+  fill: #00aabc;
+}
+#main .header-cart--hcolor-count .header-cart__count {
+  background-color: #00c6db !important;
+}
+.search-tags-cloud .tags a:hover {
+  background: #00aabc;
+}
+.breadcrumb a:hover {
+  color: #222;
+}
+.breadcrumb a:active {
+  color: #00606a;
+}
+.breadcrumb li:hover > a {
+  color: #00c6db;
+}
+.pagination .active a,
+.pagination .active span {
+  border-color: #00aabc !important;
+  background-color: #00aabc !important;
+}
+.pagination li:not(.active):hover a {
+  border-color: #00aabc !important;
+  color: #00aabc;
+}
+.pagination a:hover .fa {
+  color: #00aabc;
+}
+.pagination li.prev:hover a svg path,
+.pagination li.next:hover a svg path {
+  fill: #00aabc;
+}
+.item-views.blocks h3.line:after {
+  background: #00aabc;
+}
+.nav-direction .flex-direction-nav li a {
+  background: #00aabc;
+}
+.nav-direction .flex-direction-nav li a:hover {
+  background: #00c6db;
+}
+.show_props .char_title:hover svg path {
+  fill: #00aabc;
+}
+.cls-cluster2 {
+  fill: #00aabc;
+}
+.social-icons li:hover a {
+  border-color: #00c6db;
+  background-color: transparent;
+}
+.accordion-head.accordion-open a,
+.accordion-head:hover a {
+  color: #00aabc;
+}
+.detail .gallery-block .small-gallery ul.items li.flex-active-slide,
+.detail .gallery-block .small-gallery ul.items li:hover {
+  border-color: #00aabc;
+}
+.flex-direction-nav a:hover,
+.flex-direction-nav a:hover::before {
+  color: #00c6db;
+  border-color: #00c6db;
+}
+.color-controls .flex-direction-nav a {
+  background: #00aabc;
+}
+.color-controls .flex-direction-nav a:hover {
+  background: #00c6db;
+}
+span.zoom {
+  background-color: #00aabc;
+}
+span.zoom:hover {
+  background-color: #00c6db;
+}
+.wr_scrollbar .scrollbar .handle {
+  background: #00aabc;
+}
+.banners-small .item .title a:hover {
+  color: #00aabc !important;
+}
+.banners-big.view_2 .slides  li .maxwidth-theme .row .tablet_text {
+  background-color: #00aabc;
+}
+.banners-big.view_2 .flexslider .slides li .wrap .tablet_text .banner_buttons .btn:hover {
+  color: #00aabc !important;
+}
+.teasers.item-views.front.icons .item a:hover {
+  color: #00aabc !important;
+}
+.front-projects.item-views.table .item .info {
+  border-top-color: #00aabc;
+}
+.front-projects.item-views.table .item a:hover .info {
+  background: #324860;
+}
+.front-projects.item-views.table .item a:hover .info:before {
+  border-bottom-color: #00aabc;
+}
+.item-views .item .title a:hover {
+  color: #00aabc;
+}
+.docs-block .iblocks:hover .icons-block a,
+.iblocks .icons-block a:hover {
+  background: #00aabc;
+}
+.docs-block .iblocks:hover .text-block .text {
+  color: #00aabc !important;
+}
+.item-views .property.price .fa,
+.item-views .property.price .price_val {
+  color: #00aabc;
+}
+.item-views .item:hover .property .fa {
+  color: #00aabc;
+}
+.link-block-more .dark-color:hover:before {
+  background: #00aabc;
+}
+.tabs.item-views.table .title,
+.history.item-views.table .title {
+  color: #00aabc;
+}
+.history.item-views .title {
+  color: #00aabc;
+}
+.detail .galery #slider.flexslider:hover .flex-direction-nav {
+  background: #00c6db;
+}
+.detail .galery #carousel .slides li.flex-active-slide {
+  border-color: #00aabc;
+}
+.detail .reviews .item .review .icons:before {
+  color: #00aabc;
+}
+.detail .galery #carousel .flex-direction-nav a:hover::before {
+  color: #00aabc;
+}
+.catalog.group .price .price_val {
+  color: #00aabc;
+}
+.select-outer i.fa {
+  color: #00aabc;
+}
+.item-views.table.bblock .item .info {
+  border-top-color: #00aabc;
+}
+.popup_regions .items .item.current {
+  background: #00aabc;
+}
+#headerfixed .nav-pills>li.active>a,
+#headerfixed .nav>li>a:focus,
+#headerfixed .nav>li>a:hover,
+#headerfixed .nav-pills>li.active>a,
+#headerfixed .nav-pills>li.active>a:focus,
+#headerfixed .nav-pills>li.active>a:hover,
+#headerfixed .dropdown-menu>.active>a,
+#headerfixed .dropdown-menu>.active>a:focus,
+#headerfixed .dropdown-menu>.active>a:hover,
+#headerfixed .dropdown-menu>li>a:focus,
+#headerfixed .dropdown-menu>li>a:hover {
+  color: #00aabc;
+}
+.item .sticker-block {
+  color: #00aabc;
+}
+.news_block .item .sticker {
+  background: #00aabc;
+}
+.reviews.item-views.slider .item .preview-text-wrapper .quote svg path {
+  fill: #00aabc;
+}
+.profit-front-block .item .image {
+  background: #00aabc;
+}
+.item-views .item .title a.colored {
+  color: #00aabc;
+}
+.float-banners.v2 .item:hover:after {
+  background: #00aabc;
+}
+.marker .mcls-1 {
+  fill: #00aabc;
+}
+.bx-yandex-view-layout .pane_info_wrapper .pane_info .email a:hover {
+  color: #00aabc;
+}
+.marker:hover .mcls-1 {
+  fill: #00cfe5;
+}
+.subscribe-edit-main .form input[type=checkbox] + label:hover:after,
+.subscribe-edit-main .form input[type=checkbox]:checked + label:after,
+.subscribe-edit-main .form input[type=radio] + label:hover:after,
+.subscribe-edit-main .form input[type=radio]:checked + label:after {
+  background-color: #00aabc;
+  border-color: #00aabc;
+}
+.subscribe-edit-main font.notetext {
+  border-color: #00aabc;
+}

@@ -1,0 +1,46 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Каталог", 
+		SITE_DIR."/product/", 
+		Array(), 
+		Array("WIDE_MENU"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Аксессуары", 
+		SITE_DIR."/product/moto-aksessuary/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Обслуживание", 
+		SITE_DIR."/product/obsluzhivanie/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		SITE_DIR."/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О компании", 
+		SITE_DIR."/company/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		SITE_DIR."/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

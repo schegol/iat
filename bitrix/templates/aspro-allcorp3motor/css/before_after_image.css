@@ -1,0 +1,76 @@
+.before-after-image{
+    position: relative;
+  }
+.before-after-image img {
+    width: 100%;
+    display: block;
+}
+.handle {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    margin-left: -75px;
+    cursor: ew-resize;
+}
+.handle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    width: 2px;
+    background: #fff;
+}
+.handle>span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 42px;
+    height: 42px;
+    margin: -21px 0 0 -21px;
+    border-radius: 3px;
+    background: #fff;
+    transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    -webkit-transition: background-color .3s ease;
+}
+.handle>span .svg {
+    display: block;
+    top: 0;
+}
+.handle>span .left_arrow {
+    left: 50%;
+    margin-left: -9px;
+}
+.handle>span .left_arrow, .handle>span .right_arrow {
+    position: absolute;
+    top: 50%;
+    margin: -5px 0 0 -9px;
+    width: 6px;
+    height: 10px;
+}
+.handle>span .right_arrow {
+    right: 50%;
+    margin-right: -9px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.handle>span .svg path {
+    fill: var(--theme-base-color);
+}
+.resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 4px 0 0 4px
+}
