@@ -130,7 +130,7 @@
 	<div class="catalog-items <?=$templateName;?>_template <?=$arParams['IS_COMPACT_SLIDER'] ? 'compact-catalog-slider' : ''?> <?=$arParams['PICTURE_RATIO'] && $arParams['PICTURE_RATIO'] !== "normal" ? "ratio--".$arParams['PICTURE_RATIO'] : "" ?>">
 		<div class="fast_view_params" data-params="<?=urlencode(serialize($arTransferParams));?>"></div>
 		<?if ($arResult['SKU_CONFIG']):?><div class="js-sku-config" data-value='<?=str_replace('\'', '"', CUtil::PhpToJSObject($arResult['SKU_CONFIG'], false, true))?>'></div><?endif;?>
-		<div class="catalog-block" <?if ($bUseSchema):?>itemscope itemtype="http://schema.org/ItemList"<?endif;?> >
+		<div class="catalog-block" <?if ($bUseSchema):/*?>itemscope itemtype="http://schema.org/ItemList"<?*/endif;?> >
 			<?if($bSlider):?>
 				<div class="js_append ajax_load owl-carousel appear-block <?=$owlClasses?>" data-plugin-options='{"nav": true, "rewind": true, "dots": true, "dotsContainer": false, "loop": false, "autoplay": false, "marginMove": true, "margin": <?=($arParams['ITEMS_OFFSET'] ? ($arParams['GRID_GAP'] ? $arParams['GRID_GAP'] : "32") : ($arParams['BORDER'] ? "-1" : "0"))?>, "responsive" : {"0": {"autoWidth": false, "lightDrag": false, "dots": <?=$bDots0?>, "items": <?=$items0?>}, "380": {"autoWidth": false, "lightDrag": false, "dots": <?=$bDots380?>, "items": <?=$items380?>}, "768": {"autoWidth": false, "lightDrag": false, "dots": <?=$bDots768?>, "items": <?=$items768?>}, "1200": {"autoWidth": false, "lightDrag": false, "dots": <?=$bDots1200?>, "items": <?=$items1200?>} }}'>
 			<?else:?>
@@ -253,7 +253,7 @@
 			
 			<div class="catalog-block__wrapper grid-list__item grid-list-border-outer <?=($bSlider ? 'height-100' : '')?> <?=($arCurrentOffer ? 'has-offers' : '');?>" data-hovered="false">
 				<div class="catalog-block__item <?=$itemClass?>" id="<?=$arItem["strMainID"]?>">
-					<div class="catalog-block__inner flexbox height-100" <?if ($bUseSchema):?>itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product"<?endif;?>>
+					<div class="catalog-block__inner flexbox height-100" <?if ($bUseSchema):?><?//itemprop="itemListElement" ?>itemscope="" itemtype="http://schema.org/Product"<?endif;?>>
 						<?if ($bUseSchema):?>
 							<?/*<meta itemprop="position" content="<?=(++$positionProduct)?>" />*/?>
 							<meta itemprop="description" content="<?=htmlspecialcharsbx(strip_tags($arItem['PREVIEW_TEXT'] ?: $arItem['NAME']))?>" />
