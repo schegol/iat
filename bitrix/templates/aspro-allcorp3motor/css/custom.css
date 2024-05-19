@@ -12,7 +12,9 @@
 /* a.compare_item { display: none !important;  }*/
 
 .top_block_switch,
-.right_dok .link:nth-child(4){
+.right_dok .link:nth-child(4),
+.mobilemenu__menu--widget,
+.page-top .share {
     display: none;
     visibility: hidden;
 }

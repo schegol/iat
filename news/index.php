@@ -4,7 +4,14 @@ $APPLICATION->SetPageProperty("description", "Актуальные новост�
 $APPLICATION->SetPageProperty("title", "Новости CFMOTO – ИАТ Спортив");
 if (!$_GET['PAGEN_1']) {
     $APPLICATION->SetPageProperty("canonical", $APPLICATION->GetCurPage(false));
+
 }
+
+if ($_GET['PAGEN_1'] == 1) {
+    header('Location: https://iat-sportive.ru/news/', true, 301);
+    exit();
+}
+
 $APPLICATION->SetTitle("Новости");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 

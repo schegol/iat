@@ -437,60 +437,7 @@ $bOrderButton = ($arResult["DISPLAY_PROPERTIES"]["FORM_ORDER"]["VALUE_XML_ID"] =
 <?endif;?>
 
 <?// big gallery?>
-<?$templateData['BIG_GALLERY'] = boolval($arResult['BIG_GALLERY']);?>
-<?if($arResult['BIG_GALLERY']):?>
-	<?$bShowSmallGallery = $arParams['TYPE_BIG_GALLERY'] === 'SMALL';?>
-	<?$this->SetViewTarget('PRODUCT_BIG_GALLERY_INFO');?>
-		<?// gallery view swith?>
-		<div class="gallery-view_switch">
-			<div class="flexbox flexbox--direction-row flexbox--align-center">
-				<div class="gallery-view_switch__count color_666 font_13">
-					<div class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--small" <?=($bShowSmallGallery ? "" : "style='display:none;'");?>>
-						<span class="gallery-view_switch__count-value"><?=count((array)$arResult['BIG_GALLERY']);?></span>
-						<?=Loc::getMessage('PHOTO');?>
-						<span class="gallery-view_switch__count-separate">&mdash;</span>
-					</div>
-					<div class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--big" <?=($bShowSmallGallery ? "style='display:none;'" : "");?>>
-						<span class="gallery-view_switch__count-value">1/<?=count((array)$arResult['BIG_GALLERY']);?></span>
-						<span class="gallery-view_switch__count-separate">&mdash;</span>
-					</div>
-				</div>
-				<div class="gallery-view_switch__icons-wrapper">
-					<span class="gallery-view_switch__icons<?=(!$bShowSmallGallery ? ' active' : '')?> gallery-view_switch__icons--big" title="<?=Loc::getMessage("BIG_GALLERY");?>"><?=TSolution::showIconSvg("gallery", SITE_TEMPLATE_PATH."/images/svg/gallery_alone.svg", "", "colored_theme_hover_bg-el-svg", true, false);?></span>
-					<span class="gallery-view_switch__icons<?=($bShowSmallGallery ? ' active' : '')?> gallery-view_switch__icons--small" title="<?=Loc::getMessage("SMALL_GALLERY");?>"><?=TSolution::showIconSvg("gallery", SITE_TEMPLATE_PATH."/images/svg/gallery_list.svg", "", "colored_theme_hover_bg-el-svg", true, false);?></span>
-				</div>
-			</div>
-		</div>
 
-		<?// gallery big?>
-		<div class="gallery-big"<?=($bShowSmallGallery ? ' style="display:none;"' : '');?> >
-			<div class="owl-carousel appear-block owl-carousel--outer-dots owl-carousel--nav-hover-visible owl-bg-nav owl-carousel--light owl-carousel--button-wide owl-carousel--button-offset-half" data-plugin-options='{"items": "1", "autoplay" : false, "autoplayTimeout" : "3000", "smartSpeed":1000, "dots": true, "dotsContainer": false, "nav": true, "loop": false, "index": true, "margin": 0}'>
-				<?foreach($arResult['BIG_GALLERY'] as $arPhoto):?>
-					<div class="item">
-						<a href="<?=$arPhoto['DETAIL']['SRC']?>" class="fancy" data-fancybox="big-gallery" target="_blank" title="<?=$arPhoto['TITLE']?>">
-							<img data-src="<?=$arPhoto['PREVIEW']['src']?>" src="<?=$arPhoto['PREVIEW']['src']?>" class="img-responsive inline lazy rounded-4" title="<?=$arPhoto['TITLE']?>" alt="<?=$arPhoto['ALT']?>" />
-						</a>
-					</div>
-				<?endforeach;?>
-			</div>
-		</div>
-
-		<?// gallery small?>
-		<div class="gallery-small"<?=($bShowSmallGallery ? '' : ' style="display:none;"');?>>
-			<div class="grid-list grid-list--gap-20">
-				<?foreach($arResult['BIG_GALLERY'] as $arPhoto):?>
-					<div class="gallery-item-wrapper">
-						<div class="item rounded-4">
-							<a href="<?=$arPhoto['DETAIL']['SRC']?>" class="fancy" data-fancybox="small-gallery" target="_blank" title="<?=$arPhoto['TITLE']?>">
-								<img data-src="<?=$arPhoto['PREVIEW']['src']?>" src="<?=$arPhoto['PREVIEW']['src']?>" class="lazy img-responsive inline rounded-4" title="<?=$arPhoto['TITLE']?>" alt="<?=$arPhoto['ALT']?>" />
-							</a>
-						</div>
-					</div>
-				<?endforeach;?>
-			</div>
-		</div>
-	<?$this->EndViewTarget();?>
-<?endif;?>
 
 <?// video?>
 <?
@@ -518,6 +465,14 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
 
 				<div class="line-block line-block--20 line-block--16-vertical line-block--align-normal flexbox--wrap flexbox--justify-beetwen">
 					<div class="line-block__item catalog-detail__price catalog-detail__info--margined js-popup-price">
+
+
+<!--                            --><?//$this->SetViewTarget('cowl_buttons');?>
+<!--                            --><?//$this->EndViewTarget();?>
+
+
+
+
 						<?=TSolution\Functions::showPrice([
 							'ITEM' => ($arCurrentOffer ? $arCurrentOffer : $arResult),
 							'PARAMS' => $arParams,
@@ -538,6 +493,13 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
 								'ITEM' => $arResult
 							]);?>
 						<?endif;?>
+
+                        <?TSolution\Functions::showShareBlock(
+                            array(
+                                'CLASS' => 'bottom',
+                            )
+                        );?>
+
 					</div>
 				</div>
 
@@ -590,7 +552,14 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
 					'ITEM_ID' => $arResult['ID'],
 				];?>
 				<div class="catalog-detail__cart js-replace-btns js-config-btns" data-btn-config='<?=str_replace('\'', '"', CUtil::PhpToJSObject($arBtnConfig, false, true))?>'>
-					<?=TSolution\Functions::showBasketButton(
+
+                    <?if($arResult['CHARACTERISTICS']['TEST_DRIVE']['VALUE']): ?>
+                        <span class="btn btn-default btn-lg bg-theme-target border-theme-target btn-wide has-ripple" data-event="jqm" data-param-id="8" id="test_drive" style="margin-bottom:12px">
+								Тест драйв
+                            </span>
+                    <?endif;?>
+
+                    <?=TSolution\Functions::showBasketButton(
 						array_merge(
 							$arBtnConfig, 
 							[
@@ -825,7 +794,7 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
 											<div class="properties__title properties__item--inline color_999 js-prop-title">
                                                 <?if ($arProp['ID'] == 712) :?>
                                                     <a class="buy_block btn" id="credit_btn" href="<?=$arProp['VALUE']?>" target="_blank">Купить в кредит</a>
-                                                <? else:?>
+                                                <? elseif($arProp['ID'] != 713) :?>
                                                     <?=$arProp['NAME']?>
                                                     <?if($arProp["HINT"] && $arParams["SHOW_HINTS"]=="Y"):?>
                                                         <div class="hint hint--down">
@@ -835,7 +804,7 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
                                                     <?endif;?>
                                                 <?endif;?>
 											</div>
-                                            <?if ($arProp['ID'] != 712) :?>
+                                            <?if ($arProp['ID'] != 712 && $arProp['ID'] != 713) :?>
                                                 <div class="properties__hr properties__item--inline color_666">&mdash;</div>
                                                 <div class="properties__value color_333 properties__item--inline js-prop-value">
                                                     <?if(count((array)$arProp["DISPLAY_VALUE"]) > 1):?>
@@ -919,3 +888,15 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
 		</div>
 	</div>
 </div>
+
+<!--<script>-->
+<!---->
+<!--    $( "#test_drive" ).on( "click", function() {-->
+<!--        console.log( $( this ).text() );-->
+<!--        $('#CalltouchWidgetFrame').show();-->
+<!--    });-->
+<!---->
+<!--</script>-->
+
+
+
