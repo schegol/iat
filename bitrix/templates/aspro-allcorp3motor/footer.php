@@ -109,5 +109,49 @@ $(document).ready(function () {
 });
 </script>
 <!-- Calltouch callback-->
+
+<?
+if (
+    isset($_SERVER['HTTPS']) &&
+    ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'
+) {
+    $protocol = 'https://';
+} else {
+    $protocol = 'http://';
+}
+$curPage = $protocol.$_SERVER['SERVER_NAME'].$APPLICATION->GetCurPage();
+?>
+<?global $USER;
+$admin = false;
+if ($USER->IsAdmin()) {
+    $admin = true;
+}
+?>
+<pre<?=$admin? '' : ' style="display: none;"'?>><?print_r($arResult)?></pre>
+<script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@graph":[
+            {
+                "@type": "WebPage",
+                "@id": "<?=$curPage?>",
+                "url": "<?=$curPage?>",
+                "name": "<?=$APPLICATION->GetTitle()?>",
+				"description": "<?=$APPLICATION->GetProperty('description')?>",
+                "inLanguage": "ru-RU",
+                "potentialAction":[
+                    {
+                        "@type":"ReadAction",
+                        "target":[
+                            "<?=$curPage?>"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+</script>
 </body>
 </html>
