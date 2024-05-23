@@ -437,7 +437,61 @@ $bOrderButton = ($arResult["DISPLAY_PROPERTIES"]["FORM_ORDER"]["VALUE_XML_ID"] =
 <?endif;?>
 
 <?// big gallery?>
+<?$templateData['BIG_GALLERY'] = boolval($arResult['BIG_GALLERY']);?>
+<?if($arResult['BIG_GALLERY']):?>
 
+    <?$bShowSmallGallery = $arParams['TYPE_BIG_GALLERY'] === 'SMALL';?>
+    <?$this->SetViewTarget('PRODUCT_BIG_GALLERY_INFO');?>
+    <?// gallery view swith?>
+    <div class="gallery-view_switch">
+        <div class="flexbox flexbox--direction-row flexbox--align-center">
+            <div class="gallery-view_switch__count color_666 font_13">
+                <div class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--small" <?=($bShowSmallGallery ? "" : "style='display:none;'");?>>
+                    <span class="gallery-view_switch__count-value"><?=count((array)$arResult['BIG_GALLERY']);?></span>
+                    <?=Loc::getMessage('PHOTO');?>
+                    <span class="gallery-view_switch__count-separate">&mdash;</span>
+                </div>
+                <div class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--big" <?=($bShowSmallGallery ? "style='display:none;'" : "");?>>
+                    <span class="gallery-view_switch__count-value">1/<?=count((array)$arResult['BIG_GALLERY']);?></span>
+                    <span class="gallery-view_switch__count-separate">&mdash;</span>
+                </div>
+            </div>
+            <div class="gallery-view_switch__icons-wrapper">
+                <span class="gallery-view_switch__icons<?=(!$bShowSmallGallery ? ' active' : '')?> gallery-view_switch__icons--big" title="<?=Loc::getMessage("BIG_GALLERY");?>"><?=TSolution::showIconSvg("gallery", SITE_TEMPLATE_PATH."/images/svg/gallery_alone.svg", "", "colored_theme_hover_bg-el-svg", true, false);?></span>
+                <span class="gallery-view_switch__icons<?=($bShowSmallGallery ? ' active' : '')?> gallery-view_switch__icons--small" title="<?=Loc::getMessage("SMALL_GALLERY");?>"><?=TSolution::showIconSvg("gallery", SITE_TEMPLATE_PATH."/images/svg/gallery_list.svg", "", "colored_theme_hover_bg-el-svg", true, false);?></span>
+            </div>
+        </div>
+    </div>
+
+    <?// gallery big?>
+    <div class="gallery-big"<?=($bShowSmallGallery ? ' style="display:none;"' : '');?> >
+        <div class="owl-carousel appear-block owl-carousel--outer-dots owl-carousel--nav-hover-visible owl-bg-nav owl-carousel--light owl-carousel--button-wide owl-carousel--button-offset-half" data-plugin-options='{"items": "1", "autoplay" : false, "autoplayTimeout" : "3000", "smartSpeed":1000, "dots": true, "dotsContainer": false, "nav": true, "loop": false, "index": true, "margin": 0}'>
+            <?foreach($arResult['BIG_GALLERY'] as $arPhoto):?>
+                <div class="item">
+                    <a href="<?=$arPhoto['DETAIL']['SRC']?>" class="fancy" data-fancybox="big-gallery" target="_blank" title="<?=$arPhoto['TITLE']?>">
+                        <img data-src="<?=$arPhoto['PREVIEW']['src']?>" src="<?=$arPhoto['PREVIEW']['src']?>" class="img-responsive inline lazy rounded-4" title="<?=$arPhoto['TITLE']?>" alt="<?=$arPhoto['ALT']?>" />
+                    </a>
+                </div>
+            <?endforeach;?>
+        </div>
+    </div>
+
+    <?// gallery small?>
+    <div class="gallery-small"<?=($bShowSmallGallery ? '' : ' style="display:none;"');?>>
+        <div class="grid-list grid-list--gap-20">
+            <?foreach($arResult['BIG_GALLERY'] as $arPhoto):?>
+                <div class="gallery-item-wrapper">
+                    <div class="item rounded-4">
+                        <a href="<?=$arPhoto['DETAIL']['SRC']?>" class="fancy" data-fancybox="small-gallery" target="_blank" title="<?=$arPhoto['TITLE']?>">
+                            <img data-src="<?=$arPhoto['PREVIEW']['src']?>" src="<?=$arPhoto['PREVIEW']['src']?>" class="lazy img-responsive inline rounded-4" title="<?=$arPhoto['TITLE']?>" alt="<?=$arPhoto['ALT']?>" />
+                        </a>
+                    </div>
+                </div>
+            <?endforeach;?>
+        </div>
+    </div>
+    <?$this->EndViewTarget();?>
+<?endif;?>
 
 <?// video?>
 <?
@@ -553,7 +607,7 @@ $templateData['VIDEO'] = boolval($arResult['VIDEO']);
 				];?>
 				<div class="catalog-detail__cart js-replace-btns js-config-btns" data-btn-config='<?=str_replace('\'', '"', CUtil::PhpToJSObject($arBtnConfig, false, true))?>'>
 
-                    <?if($arResult['CHARACTERISTICS']['TEST_DRIVE']['VALUE']): ?>
+                    <?if($arResult['CHARACTERISTICS']['TEST_DRIVE']['DISPLAY_VALUE'] == 'Да'): ?>
                         <span class="btn btn-default btn-lg bg-theme-target border-theme-target btn-wide has-ripple" data-event="jqm" data-param-id="8" id="test_drive" style="margin-bottom:12px">
 								Тест драйв
                             </span>
