@@ -14,13 +14,20 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
-    Array(
-        "Доставка",
-        SITE_DIR."/dostavka/",
-        Array(),
-        Array(),
-        ""
-    ),
+	Array(
+		"Обслуживание", 
+		SITE_DIR."/product/obsluzhivanie/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Доставка", 
+		SITE_DIR."/dostavka/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
 	Array(
 		"Новости", 
 		SITE_DIR."/news/", 
@@ -41,13 +48,6 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
-	),
-    Array(
-        "Обслуживание",
-        SITE_DIR."/product/obsluzhivanie/",
-        Array(),
-        Array(),
-        ""
-    ),
+	)
 );
 ?>

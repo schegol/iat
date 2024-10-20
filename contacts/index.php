@@ -20,7 +20,7 @@ $APPLICATION->SetTitle("Контакты");
           "postalCode": "188660",
           "addressCountry": "RU"
          },
-         "telephone": "+7 (812) 223 60 92",
+         "telephone": "+7 (812) 337 08 87",
          "openingHoursSpecification": [
           {
            "@type": "OpeningHoursSpecification",
@@ -114,6 +114,7 @@ $APPLICATION->SetTitle("Контакты");
 			5 => "PAY_TYPE",
 			6 => "MAP",
 			7 => "MORE_PHOTOS",
+			8 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
@@ -158,6 +159,7 @@ $APPLICATION->SetTitle("Контакты");
 		"SECTIONS_TYPE_VIEW" => "FROM_MODULE",
 		"SECTION_ELEMENTS_TYPE_VIEW" => "list_elements_1",
 		"ELEMENT_TYPE_VIEW" => "element_1",
+		"CHOOSE_REGION_TEXT" => "",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "#SECTION_CODE#/",

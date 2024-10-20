@@ -15,6 +15,8 @@ $templateData = array(
 	$arParams['BTN_CLASS'] = 'btn-lg';
 	$bWide = $arParams['WIDE'] == 'Y';
 	$bOffset = $arParams['OFFSET'] == 'Y';
+
+	$modTitle = 'ИАТ Спортив Юг/Север';
 	?>
 	<div class="map-list map2 <?=$templateName;?>-template">
 		<? if($bWide && $bOffset) : ?>
@@ -42,6 +44,10 @@ $templateData = array(
 				'PARAMS' => $arParams,
 			]);?>
 		<?endif;?>
+
+		<div class="maxwidth-theme">
+			<h3 class="index-block__title header_highlighted offset-bottom"><?=$modTitle;?></h3>
+		</div>
 
 		<div class="map-wrapper">
 			<div class="maxwidth-theme maxwidth-theme--relative map-items-wrapper">

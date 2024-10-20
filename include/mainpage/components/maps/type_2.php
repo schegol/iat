@@ -8,39 +8,36 @@
 	$paramTitlePosition = TSolution::GetFrontParametrValue('TITLE_POSITION_MAPS_'.$indexType);
 }
 ?>
-<?$APPLICATION->IncludeComponent(
-	"aspro:wrapper.block.allcorp3motor", 
-	"front_map", 
-	array(
-		"CACHE_FILTER" => "Y",
-		"CACHE_GROUPS" => "N",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
+<?$APPLICATION->IncludeComponent("aspro:wrapper.block.allcorp3motor", "front_map", Array(
+	"CACHE_FILTER" => "Y",	// Кешировать при установленном фильтре
+		"CACHE_GROUPS" => "N",	// Учитывать права доступа
+		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
 		"COMPOSITE_FRAME_MODE" => "A",
 		"COMPOSITE_FRAME_TYPE" => "AUTO",
 		"AJAX_OPTION_STYLE" => "Y",
-		"IBLOCK_TYPE" => "aspro_allcorp3motor_content",
-		"IBLOCK_ID" => "32",
-		"TITLE" => "Контакты",
+		"IBLOCK_TYPE" => "aspro_allcorp3motor_content",	// Тип инфоблока
+		"IBLOCK_ID" => "32",	// Инфоблок
+		"TITLE" => "Контакты",	// Заголовок блока
 		"SHOW_TITLE" => $paramShowTitle,
 		"TITLE_POSITION" => $paramTitlePosition,
-		"RIGHT_TITLE" => "Перейти в раздел",
-		"RIGHT_LINK" => "contacts/",
-		"CODE_BLOCK" => "MAPS",
-		"WIDE" => "FROM_THEME",
+		"RIGHT_TITLE" => "Перейти в раздел",	// Название ссылки на все элементы
+		"RIGHT_LINK" => "contacts/",	// Ссылка на все элементы
+		"CODE_BLOCK" => "MAPS",	// Символьный код блока
+		"WIDE" => "FROM_THEME",	// На всю ширину экрана
 		"OFFSET" => "FROM_THEME",
 		"COMPONENT_TEMPLATE" => "front_map",
-		"ELEMENT_SORT_FIELD" => "sort",
-		"ELEMENT_SORT_ORDER" => "asc",
-		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER2" => "desc",
-		"FILTER_NAME" => "arRegionLink",
-		"MAP_TYPE" => "0",
-		"SUBTITLE" => "",
-		"SHOW_PREVIEW_TEXT" => "Y"
+		"ELEMENT_SORT_FIELD" => "sort",	// По какому полю сортируем элементы
+		"ELEMENT_SORT_ORDER" => "asc",	// Порядок сортировки элементов
+		"ELEMENT_SORT_FIELD2" => "id",	// Поле для второй сортировки элементов
+		"ELEMENT_SORT_ORDER2" => "desc",	// Порядок второй сортировки элементов
+		"FILTER_NAME" => "arRegionLink",	// Имя массива со значениями фильтра для фильтрации элементов
+		"MAP_TYPE" => "0",	// Тип карты
+		"SUBTITLE" => "",	// Дополнительный заголовок над основным заголовком блока
+		"SHOW_PREVIEW_TEXT" => "Y",	// Отображать текст под заголовком
 	),
 	false,
 	array(
-		"ACTIVE_COMPONENT" => "Y"
+	"ACTIVE_COMPONENT" => "Y"
 	)
 );?>

@@ -18,6 +18,9 @@ if(class_exists('TSolution')){
     <link type="image/x-icon" href="https://iat-sportive.ru/favicon.ico?v=2" rel="shortcut icon">
     <link type="Image/x-icon" href="https://iat-sportive.ru/favicon.ico?v=2" rel="icon">
 
+    <meta name="yandex-verification" content="e4a20f87537aa6a5" />
+    <meta name="google-site-verification" content="87zZoxZjB0W86WWqKY9Xgqk1C5DAhTEte0hyiObdmHk" />
+
     <!-- Begin Online-Chat {literal} -->
 
     <!-- {/literal} End Online-Chat -->
@@ -55,6 +58,24 @@ if(class_exists('TSolution')){
 
     <!-- /Yandex.Metrika counter -->
 
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	   m[i].l=1*new Date();
+	   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+	   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+	
+	   ym(98031948, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true,
+			webvisor:true
+	   });
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/98031948" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
 
     <!-- Google Tag Manager -->
     <script>
@@ -75,9 +96,15 @@ if(class_exists('TSolution')){
         gtag('config', 'G-HLPES61PGH');
     </script>
 
-
-
-
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MG52LWELSJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-MG52LWELSJ');
+	</script>
 
     <!-- Top.Mail.Ru counter -->
     <script type="text/javascript">

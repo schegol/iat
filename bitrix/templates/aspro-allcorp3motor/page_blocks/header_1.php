@@ -71,7 +71,7 @@ if(!$bMarginHeader) {
 				<div class="maxwidth-theme">
 			<?endif;?>
 				
-			<div class="header__top-inner">
+			<div class="header__top-inner justify-content-end">
 				<?if($arRegion):?>
 					<?//regions?>
 					<div class="header__top-item icon-block--with_icon">
@@ -95,7 +95,7 @@ if(!$bMarginHeader) {
 					'WRAPPER' => 'header__top-item hide-1300',
 				);
 				?>
-				<?=TSolution\Functions::showHeaderBlock($blockOptions);?>
+				<div class="v-hidden"><?=TSolution\Functions::showHeaderBlock($blockOptions);?></div>
 
 				<?//show social?>
 				<?
@@ -127,7 +127,7 @@ if(!$bMarginHeader) {
 				$arDropdownSchedule = explode(",", $arTheme['SHOW_DROPDOWN_SCHEDULE']['VALUE']);
 				$bDropdownSchedule =  in_array('HEADER', $arDropdownSchedule) ? 'Y' : 'N';
 
-				$blockOptions = array(
+					/*$blockOptions = array(
 					'PARAM_NAME' => 'HEADER_TOGGLE_PHONE',
 					'BLOCK_TYPE' => 'PHONE',
 					'IS_AJAX' => $bAjax,
@@ -141,9 +141,51 @@ if(!$bMarginHeader) {
 					'DROPDOWN_SOCIAL' =>  $bDropdownSocial,
 					'DROPDOWN_ADDRESS' =>  $bDropdownAddress,
 					'DROPDOWN_SCHEDULE' =>  $bDropdownSchedule,
-				);
+				);*/
 				?>
-				<?=TSolution\Functions::showHeaderBlock($blockOptions);?>
+				<div class="d-flex">
+					<div class="d-flex">
+						<div class="icon-block--with_icon">
+							<span class="icon-block__icon icon-block__icon--top banner-light-icon-fill menu-light-icon-fill">
+								<i class="svg inline  svg-inline-address" aria-hidden="true">
+									<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M10 5.00244C10 6.31243 9.49622 7.50475 8.67184 8.39624L4.88411 12.8264C4.58473 13.1856 4 12.9739 4 12.5063V9.90242C1.71776 9.43915 0 7.4214 0 5.00244C0 2.24102 2.23858 0.00244141 5 0.00244141C7.76142 0.00244141 10 2.24102 10 5.00244ZM5 2.00244C6.65685 2.00244 8 3.34559 8 5.00244C8 6.6593 6.65685 8.00244 5 8.00244C3.34315 8.00244 2 6.6593 2 5.00244C2 3.34559 3.34315 2.00244 5 2.00244Z"
+											fill="#888888">
+										</path>
+									</svg>
+								</i>
+							</span>
+						</div>
+						<span>ИАТ Спортив Север</span>
+						<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR."include/header/header_phone_ext.php"
+							)
+						);?>
+						<?//=TSolution\Functions::showHeaderBlock($blockOptions);?>
+					</div>
+					<div class="d-flex">
+						<div class="icon-block--with_icon">
+							<span class="icon-block__icon icon-block__icon--top banner-light-icon-fill menu-light-icon-fill">
+								<i class="svg inline  svg-inline-address" aria-hidden="true">
+									<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M10 5.00244C10 6.31243 9.49622 7.50475 8.67184 8.39624L4.88411 12.8264C4.58473 13.1856 4 12.9739 4 12.5063V9.90242C1.71776 9.43915 0 7.4214 0 5.00244C0 2.24102 2.23858 0.00244141 5 0.00244141C7.76142 0.00244141 10 2.24102 10 5.00244ZM5 2.00244C6.65685 2.00244 8 3.34559 8 5.00244C8 6.6593 6.65685 8.00244 5 8.00244C3.34315 8.00244 2 6.6593 2 5.00244C2 3.34559 3.34315 2.00244 5 2.00244Z"
+											fill="#888888">
+										</path>
+									</svg>
+								</i>
+							</span>
+						</div>
+						<span>ИАТ Спортив Юг</span>
+						<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR."include/header/header_phone_ext2.php"
+							)
+						);?>
+					</div>
+				</div>
 				<?$visible = ($bShowLang || $bCompare || $bCabinet || $bOrder || $bShowThemeSelector);?>
 				<?$arShowSites = TSolution\Functions::getShowSites();
 				$countSites = count($arShowSites);?>

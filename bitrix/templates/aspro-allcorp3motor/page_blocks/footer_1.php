@@ -60,8 +60,8 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 					);?>
 				</div>
 
-				<div class="footer__part-item flex-50-1200 a4">
-					<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
+				<!--<div class="footer__part-item flex-50-1200 a4">
+					<?/*$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
 						array(
 							"COMPONENT_TEMPLATE" => ".default",
 							"PATH" => SITE_DIR."include/footer/menu/menu_bottom4.php",
@@ -71,8 +71,23 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 							"EDIT_TEMPLATE" => "include_area.php"
 						),
 						false, array("HIDE_ICONS" => "Y")
-					);?>
-				</div>
+					);*/?>
+				</div>-->
+
+				<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+						"COMPONENT_TEMPLATE" => ".default",
+						"AREA_FILE_SHOW" => "file",
+						"PATH" => SITE_DIR."include/footer/footer_adress_ext.php"
+					)
+				);?>
+
+				<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+						"COMPONENT_TEMPLATE" => ".default",
+						"AREA_FILE_SHOW" => "file",
+						"PATH" => SITE_DIR."include/footer/footer_adress_ext2.php"
+					)
+				);?>
+
 				
 				<?//show phone, address, email, social wrapper?>
 				<?$visible = (($bShowPhone && $bPhone) || $bShowEmail || $bShowAddress || $bShowSocial);?>
@@ -92,7 +107,7 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 				$arDropdownSchedule = explode(",", $arTheme['SHOW_DROPDOWN_SCHEDULE']['VALUE']);
 				$bDropdownSchedule =  in_array('FOOTER', $arDropdownSchedule) ? 'Y' : 'N';
 
-				$blockOptions = array(
+				/*$blockOptions = array(
 					'PARAM_NAME' => 'FOOTER_ALL_BLOCK',
 					'BLOCK_TYPE' => 'FOOTER_ALL_BLOCK',
 					'IS_AJAX' => $bAjax,
@@ -135,8 +150,8 @@ include($_SERVER['DOCUMENT_ROOT'].SITE_DIR.'include/footer/settings.php');
 							'WRAPPER' => 'footer__social footer__info-item social-'.$footerColor,
 						]
 					]
-				);?>
-				<?=TSolution\Functions::showFooterBlock($blockOptions);?>
+				);*/?>
+				<?//=TSolution\Functions::showFooterBlock($blockOptions);?>
 			</div>
 		</div>
 	</div>

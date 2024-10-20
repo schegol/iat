@@ -11,6 +11,55 @@
 /* Hide compare button */
 /* a.compare_item { display: none !important;  }*/
 
+.v-hidden {
+	visibility: hidden;
+}
+
+.d-none {
+	display: none;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-end {
+	justify-content: flex-end;
+}
+
+.header_highlighted {
+	max-width: fit-content;
+	margin-bottom: 12px;
+	padding: 4px;
+	background-color: #fafafa;
+	color: #333;
+	border-radius: 8px;
+}
+
+.offset-bottom {
+	position: relative;
+	bottom: 12px;
+}
+
+.mobile-menu__item_custom {
+	line-height: unset;
+}
+
+.mobile-menu__item_custom span {
+	display: block;
+	text-align: left;
+	margin-left: 76px;
+	font-size: 18px;
+}
+
+.mobile-menu__item_custom span.m-top {
+	margin-top: 18px;
+}
+
+.header_1 .phones .svg {
+	display: none;
+}
+
 .top_block_switch,
 .right_dok .link:nth-child(4),
 .mobilemenu__menu--widget,
@@ -49,3 +98,14 @@
         padding-right: 15px;
     }
 }
+
+@media (min-width: 768px) {
+	.offset-bottom {
+		bottom: 30px;
+	}
+}
+
+/* Contacts customization */
+/*.contacts__col--right {
+	width: 700px;
+}*/

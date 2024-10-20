@@ -230,7 +230,12 @@ global $arTheme, $arRegion;
 			$bShowSocialMobileMenu
 		):?>
 			<div class="mobilemenu__item">
-				<?=TSolution\Functions::showMobileMenuBlock(
+				<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+						"AREA_FILE_SHOW" => "file",
+						"PATH" => SITE_DIR."include/header/mobile_menu_contacts_ext.php"
+					)
+				);?>
+				<?/*=TSolution\Functions::showMobileMenuBlock(
 					array(
 						'PARAM_NAME' => 'MOBILE_MENU_TOGGLE_CONTACTS',
 						'BLOCK_TYPE' => 'CONTACTS',
@@ -244,7 +249,7 @@ global $arTheme, $arRegion;
 						'EMAIL' => $bShowEmailMobileMenu,
 						'SCHEDULE' => $bShowScheduleMobileMenu,
 					)
-				);?>
+				);*/?>
 
 				<?// social?>
 				<?=TSolution\Functions::showMobileMenuBlock(
