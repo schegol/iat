@@ -250,8 +250,8 @@
 					]);?>
 				<?endif;?>
 			<?$itemDiscount = ob_get_clean();?>
-			
-			<div class="catalog-block__wrapper grid-list__item grid-list-border-outer <?=($bSlider ? 'height-100' : '')?> <?=($arCurrentOffer ? 'has-offers' : '');?>" data-hovered="false">
+
+			<div class="catalog-block__wrapper<?=$GLOBALS['SHOWCASE'] == 'Y' ? ' catalog-block__wrapper--new' : ''?> grid-list__item grid-list-border-outer <?=($bSlider ? 'height-100' : '')?> <?=($arCurrentOffer ? 'has-offers' : '');?>" data-hovered="false">
 				<div class="catalog-block__item <?=$itemClass?>" id="<?=$arItem["strMainID"]?>">
 					<div class="catalog-block__inner flexbox height-100" <?if ($bUseSchema):?><?//itemprop="itemListElement" ?>itemscope="" itemtype="http://schema.org/Product"<?endif;?>>
 						<?if ($bUseSchema):?>
@@ -511,6 +511,12 @@
 		</div> <?//.catalog-block?>
 	</div> <?//.catalog-items?>
 	<?endif;?>
+
+    <?if ($GLOBALS['SHOWCASE'] == 'Y'):?>
+        <?if (strlen($arParams['RIGHT_LINK'])):?>
+            <a class="calalog-all-link" href="<?=$arParams['RIGHT_LINK']?>">Вся продукция</a>
+        <?endif?>
+    <?endif?>
 
 	<script>
 		if (typeof initCountdown === "function") initCountdown();

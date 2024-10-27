@@ -5,6 +5,11 @@ global $APPLICATION, $arRegion, $arSite, $arTheme;
 
 require_once('vendor/php/solution.php');
 
+$GLOBALS['SHOWCASE'] = false;
+if (isset($_GET['showcase']) && $_GET['showcase'] == 'Y') {
+    $GLOBALS['SHOWCASE'] = true;
+}
+
 $arSite = CSite::GetByID(SITE_ID)->Fetch();
 if(class_exists('TSolution')){
     $bIncludedModule =  \Bitrix\Main\Loader::includeModule(TSolution::moduleID);
