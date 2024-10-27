@@ -24,8 +24,18 @@ if($arMainPageOrder && is_array($arMainPageOrder)){
 		$bAjaxBlock = ($currentBlockOptions['AJAX']['ENABLE'] === 'Y' && $currentBlockOptions['AJAX']['FILE_PATH']);
 		$ajaxPath = $bAjaxBlock ? str_replace('//', '/', SITE_DIR.$currentBlockOptions['AJAX']['FILE_PATH'].'/'.$subtype.'/'.$strTemplateName.'.php') : '';
 
-		if($bShowBlock){
-			?><div class="drag-block container <?=$optionCode?> <?=$bBlockIndexClass?>" data-class="<?=$subtype?>_drag" data-order="<?=++$key?>">				
+		if($bShowBlock){?>
+            <?if ($GLOBALS['SHOWCASE']):
+                if ($subtype == 'big_banner_index') {
+                    $strTemplateName = 'type_4_slider';
+                }
+
+                if ($subtype == 'tizers') {
+                    continue;
+                }
+            endif?>
+
+            <div class="drag-block container <?=$optionCode?> <?=$bBlockIndexClass?> <?=$subtype?> <?=$strTemplateName?>" data-class="<?=$subtype?>_drag" data-order="<?=++$key?>">
 				<div class="<?=$indexBlockClasses?> " <?=($ajaxPath ? 'data-file="'.$ajaxPath.'"' : '')?>>
 					<?=TSolution::ShowPageType('mainpage', $subtype, $strTemplateName, true);?>
 				</div>
