@@ -1,0 +1,6 @@
+
+08.04.2024 17:41:27 START UPDATE 1.0.0 -> 1.0.1
+
+08.04.2024 17:41:27 Update /include/blocks/detail_linked_tarifs.php in s1
+08.04.2024 17:41:27 FINISH UPDATE 1.0.0 -> 1.0.1
+
