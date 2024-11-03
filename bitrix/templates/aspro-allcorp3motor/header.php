@@ -7,7 +7,7 @@ require_once('vendor/php/solution.php');
 
 $GLOBALS['SHOWCASE'] = false;
 if (isset($_GET['showcase']) && $_GET['showcase'] == 'Y') {
-    $GLOBALS['SHOWCASE'] = true;
+    $GLOBALS['SHOWCASE'] = 'Y';
 }
 
 $arSite = CSite::GetByID(SITE_ID)->Fetch();
