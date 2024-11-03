@@ -54,6 +54,8 @@ else{
 			<?include 'epilog_blocks/'.$blockCode.'.php';?>
 		<?endif;?>
 	<?endforeach;?>
+
+    <?include 'epilog_blocks/similar.php';?>
 </div>
 
 <?
