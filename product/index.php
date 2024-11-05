@@ -317,7 +317,7 @@ $APPLICATION->SetTitle("Каталог");
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "Y",
 		"SHOW_ASK_BLOCK" => "Y",
-		"SHOW_BIG_GALLERY" => "Y",
+		"SHOW_BIG_GALLERY" => "N",
 		"SHOW_BUY" => "N",
 		"SHOW_CHILD_SECTIONS" => "Y",
 		"SHOW_DEACTIVATED" => "N",
