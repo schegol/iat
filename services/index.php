@@ -3,7 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Услуги");
 ?>
 
-<?if (isset($GLOBALS['SHOWCASE']) && $GLOBALS['SHOWCASE'] == 'Y'):?>
+<?
+global $USER;
+if ($USER->IsAdmin()):?>
     <?$APPLICATION->SetPageProperty("robots", "noindex, nofollow");?>
 
     <?$APPLICATION->IncludeComponent(
