@@ -171,6 +171,32 @@
 	z-index: 2;
 }
 
+.new-service-content {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.new-service-content table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.new-service-content th {
+	color: #fff;
+	font-weight: 700;
+}
+
+.new-service-content th,
+.new-service-content td {
+	min-width: 150px;
+	padding: 5px;
+	border: 1px solid #fff;
+}
+
+.new-service-additional .grid-list--items-3-wide {
+	grid-template-columns: repeat(auto-fill,minmax(364px,1fr));
+}
+
 @media (max-width: 340px) {
     .mobileheader__item--right-icons .line-block {
         justify-content: unset;

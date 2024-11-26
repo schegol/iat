@@ -240,21 +240,13 @@ $arItems = $bItemsTypeElements ? $arResult['ITEMS'] : $arResult['SECTIONS'];
 					<div class="services-list__item <?=$itemClasses?> <?=($bDetailLink ? '' : 'services-list__item--cursor-initial')?>" id="<?=$this->GetEditAreaId($arItem['ID'])?>">
 						<?if($bShowImage && $imageSrc):?>
 							<div class="services-list__item-image-wrapper <?=$imageWrapperClasses?>">
-								<?if($bDetailLink):?>
-									<span class="services-list__item-link <?=($bImgSticky ? 'sticky-block' : '')?>" href="<?=$detailUrl?>">
-								<?else:?>
-									<span class="services-list__item-link <?=($bImgSticky ? 'sticky-block' : '')?>">
-								<?endif;?>
+                                <span class="services-list__item-link <?=($bImgSticky ? 'sticky-block' : '')?>">
 									<?if($bIcons && $nImageID):?>
 										<?=TSolution::showIconSvg(' fill-theme services-list__item-image-icon', $imageSrc);?>
 									<?else:?>
 										<span class="services-list__item-image rounded-4 <?=$imageClasses?>" style="background-image: url(<?=$imageSrc?>);"></span>
 									<?endif;?>
-								<?if($bDetailLink):?>
-									</span>
-								<?else:?>
-									</span>
-								<?endif;?>
+                                </span>
 
 								<?if(
 									$arParams['IMAGE_POSITION'] === 'TOP' ||

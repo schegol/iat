@@ -29,9 +29,9 @@ if ($USER->IsAdmin()):?>
             "COMPOSITE_FRAME_MODE" => "A",
             "COMPOSITE_FRAME_TYPE" => "AUTO",
             "DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
-            "DETAIL_BLOCKS_ALL_ORDER" => "order_form,desc,char,tizers,reviews,big_gallery,video,faq,services,sale,articles,docs,goods,dops,comments",
-            "DETAIL_BLOCKS_ORDER" => "order_form,tabs,tizers,big_gallery,sale,services,goods,articles,comments",
-            "DETAIL_BLOCKS_TAB_ORDER" => "desc,char,docs,faq,video,reviews,dops",
+            "DETAIL_BLOCKS_ALL_ORDER" => "desc",
+            "DETAIL_BLOCKS_ORDER" => "tabs,tizers,big_gallery,services,goods,comments",
+            "DETAIL_BLOCKS_TAB_ORDER" => "desc",
             "DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
             "DETAIL_DISPLAY_TOP_PAGER" => "N",
             "DETAIL_FIELD_CODE" => array(

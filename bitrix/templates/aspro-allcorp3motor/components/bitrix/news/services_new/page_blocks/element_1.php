@@ -7,7 +7,7 @@
 }?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
-	"news",
+	"service_new",
 	Array(
 		"S_ASK_QUESTION" => $arParams["S_ASK_QUESTION"],
 		"S_ORDER_SERVISE" => $arParams["S_ORDER_SERVISE"],
