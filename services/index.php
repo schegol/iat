@@ -10,7 +10,7 @@ if ($USER->IsAdmin()):?>
 
     <?$APPLICATION->IncludeComponent(
         "bitrix:news",
-        "services",
+        "services_new",
         array(
             "ADD_ELEMENT_CHAIN" => "Y",
             "ADD_SECTIONS_CHAIN" => "Y",
@@ -242,8 +242,8 @@ if ($USER->IsAdmin()):?>
             "YANDEX" => "N",
             "SEF_URL_TEMPLATES" => array(
                 "news" => "",
-                "section" => "#SECTION_CODE_PATH#/",
-                "detail" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+                "section" => "",
+                "detail" => "#ELEMENT_CODE#/",
             )
         ),
         false

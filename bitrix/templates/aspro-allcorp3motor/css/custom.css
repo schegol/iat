@@ -156,6 +156,21 @@
 	visibility: visible !important;
 }
 
+.services-list__wrapper--new {
+	position: relative;
+	z-index: 1;
+}
+
+.services-list__wrapper--new::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
 @media (max-width: 340px) {
     .mobileheader__item--right-icons .line-block {
         justify-content: unset;
