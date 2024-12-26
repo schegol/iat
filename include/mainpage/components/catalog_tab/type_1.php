@@ -1,3 +1,65 @@
+<?
+$catalogIBlock = 38;
+$countInLine = 4;
+$customElementSort = '';
+$skipHit = 'N';
+$showOneProductFromSection = 'N';
+if ($GLOBALS['SHOWCASE'] == 'Y') {
+    $showOneProductFromSection = 'Y';
+
+    $items = $sections = [];
+    $sectionIteration = 1;
+
+    $obSections = CIBlockSection::GetList(
+        array('SORT' => 'ASC'),
+        array(
+            'IBLOCK_ID' => $catalogIBlock,
+            'ACTIVE' => 'Y',
+            'DEPTH_LEVEL' => 1,
+            'CNT_ACTIVE' => 'Y',
+        ),
+        true,
+        array('ID', 'NAME'),
+	);
+    while ($resSection = $obSections->GetNext()) {
+        if ($resSection['ELEMENT_CNT'] <= 0)
+            continue;
+
+        $sections[] = $resSection;
+
+        if ($sectionIteration >= $countInLine)
+            break;
+
+        $sectionIteration++;
+    }
+
+    foreach ($sections as $i => $section) {
+        $obElements = CIBlockElement::GetList(
+            array('SORT' => 'ASC', 'NAME' => 'ASC'),
+            array(
+                'IBLOCK_ID' => $catalogIBlock,
+                'ACTIVE' => 'Y',
+                'SECTION_ID' => $sections[$i]['ID'],
+                'INCLUDE_SUBSECTIONS' => 'Y',
+            ),
+            false,
+            false,
+            array('ID')
+        );
+        while ($resElement = $obElements->GetNext()) {
+            $items[] = $resElement['ID'];
+
+            break;
+        }
+    }
+
+    global $arFilterCatalogNew;
+    $arFilterCatalogNew['ID'] = $items;
+    $customElementSort = array('ID' => $items);
+    $skipTabs = 'Y';
+}
+?>
+
 <?$APPLICATION->IncludeComponent(
 	"aspro:tabs.allcorp3motor", 
 	".default", 
@@ -9,9 +71,9 @@
 		"COMPOSITE_FRAME_MODE" => "A",
 		"COMPOSITE_FRAME_TYPE" => "AUTO",
 		"DETAIL_URL" => "",
-		"FILTER_NAME" => "arFilterCatalog",
+		"FILTER_NAME" => "arFilterCatalogNew",
 		"HIT_PROP" => "HIT",
-		"IBLOCK_ID" => "38",
+		"IBLOCK_ID" => $catalogIBlock,
 		"IBLOCK_TYPE" => "aspro_allcorp3motor_catalog",
 		"PAGE_ELEMENT_COUNT" => "FROM_THEME",
 		"PARENT_SECTION" => "",
@@ -33,6 +95,7 @@
 		"ELEMENT_SORT_FIELD2" => "ID",
 		"ELEMENT_SORT_ORDER" => "ASC",
 		"ELEMENT_SORT_ORDER2" => "ASC",
+        "CUSTOM_ELEMENT_SORT" => $customElementSort,
 		"TITLE" => "Вся продукция",
 		"COMPONENT_TEMPLATE" => ".default",
 		"SECTION_ID" => "",
@@ -45,7 +108,7 @@
 		),
 		"ELEMENTS_TABLE_TYPE_VIEW" => "FROM_MODULE",
 		"SHOW_SECTION" => "Y",
-		"COUNT_IN_LINE" => "4",
+		"COUNT_IN_LINE" => $countInLine,
 		"RIGHT_TITLE" => "Каталог",
 		"RIGHT_LINK" => "product/",
 		"SHOW_DISCOUNT_TIME" => "Y",
@@ -94,7 +157,9 @@
 		"IMG_CORNER" => "FROM_THEME",
 		"ELEMENT_IN_ROW" => "FROM_THEME",
 		"COUNT_ROWS" => "FROM_THEME",
-		"IMAGES_POSITION" => "FROM_THEME"
+		"IMAGES_POSITION" => "FROM_THEME",
+        "SHOW_ONE_PRODUCT_FROM_EACH_SECTION" => $showOneProductFromSection,
+        "SKIP_TABS" => $skipTabs,
 	),
 	false
 );?>

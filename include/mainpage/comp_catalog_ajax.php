@@ -19,7 +19,7 @@ if ($bAjaxMode) {
 	$arIncludeParams = ($bAjaxMode ? $_POST["AJAX_PARAMS"] : $arParamsTmp);
 	$arGlobalFilter = ($bAjaxMode ? unserialize(urldecode($_POST["GLOBAL_FILTER"])) : ($_GET['GLOBAL_FILTER'] ? unserialize(urldecode($_GET['GLOBAL_FILTER'])) : array()));
 	$arComponentParams = unserialize(urldecode($arIncludeParams));
-	
+
 	$template = ($bAjaxMode ? $_POST["TYPE_TEMPLATE"] : $arComponentParams['TYPE_TEMPLATE']);
 
 	/* replace REQUEST_URI to SITE_DIR for pagination in tabs */

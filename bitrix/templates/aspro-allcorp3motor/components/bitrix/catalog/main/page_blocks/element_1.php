@@ -240,5 +240,107 @@
 			),
 			$component
 		);?>
-	</div>
+    </div>
 </div>
+
+<?
+$relatedProducts = $el = [];
+$obj = CIBlockElement::GetList(
+    array('SORT' => 'ASC'),
+    array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'CODE' => $arResult['VARIABLES']['ELEMENT_CODE']),
+    false,
+    false,
+    array('ID', 'IBLOCK_ID')
+);
+if ($obRes = $obj->GetNextElement()) {
+    $el = $obRes->GetFields();
+    $el['PROPERTIES'] = $obRes->GetProperties();
+}
+
+$relatedProducts = $el['PROPERTIES']['LINK_RELATED_GOODS']['VALUE'];
+if (is_array($relatedProducts) && !empty($relatedProducts)) {
+    global $arFilterCatalogRelated;
+    $arFilterCatalogRelated['ID'] = $relatedProducts;
+?>
+    <div class="element-related-products">
+        <?$APPLICATION->IncludeComponent(
+            "aspro:tabs.allcorp3motor",
+            ".default",
+            array(
+                "CACHE_FILTER" => "Y",
+                "CACHE_GROUPS" => "N",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO",
+                "DETAIL_URL" => "",
+                "FILTER_NAME" => "arFilterCatalogRelated",
+                "HIT_PROP" => "HIT",
+                "IBLOCK_ID" => $arParams['IBLOCK_ID'],
+                "IBLOCK_TYPE" => "aspro_allcorp3motor_catalog",
+                "PAGE_ELEMENT_COUNT" => "FROM_THEME",
+                "PARENT_SECTION" => "",
+                "PROPERTY_CODE" => array(
+                    0 => "SHOW_ON_INDEX_PAGE",
+                    1 => "STATUS",
+                    2 => "ARTICLE",
+                    3 => "PRICE",
+                    4 => "FORM_ORDER",
+                    5 => "PRICEOLD",
+                    6 => "ECONOMY",
+                    7 => "DATE_COUNTER",
+                    8 => "HIT",
+                    9 => "BRAND",
+                    10 => "RECOMMEND",
+                    11 => "",
+                ),
+                "ELEMENT_SORT_FIELD" => "SORT",
+                "ELEMENT_SORT_FIELD2" => "ID",
+                "ELEMENT_SORT_ORDER" => "ASC",
+                "ELEMENT_SORT_ORDER2" => "ASC",
+                "TITLE" => "Похожие товары",
+                "COMPONENT_TEMPLATE" => ".default",
+                "SECTION_ID" => "",
+                "SECTION_CODE" => "",
+                "FIELD_CODE" => array(
+                    0 => "NAME",
+                    1 => "PREVIEW_PICTURE",
+                    2 => "DETAIL_PICTURE",
+                    3 => "",
+                ),
+                "ELEMENTS_TABLE_TYPE_VIEW" => "FROM_MODULE",
+                "SHOW_SECTION" => "Y",
+                "COUNT_IN_LINE" => 4,
+                "RIGHT_TITLE" => "",
+                "RIGHT_LINK" => "",
+                "SHOW_DISCOUNT_TIME" => "Y",
+                "SHOW_OLD_PRICE" => "Y",
+                "SHOW_PREVIEW_TEXT" => "N",
+                "SHOW_DISCOUNT_PRICE" => "Y",
+                "SHOW_GALLERY" => "Y",
+                "ADD_PICT_PROP" => "PHOTOS",
+                "MAX_GALLERY_ITEMS" => "5",
+                "SUBTITLE" => "",
+                "SKU_IBLOCK_ID" => $arParams["SKU_IBLOCK_ID"],
+                "SKU_PROPERTY_CODE" => $arParams["SKU_PROPERTY_CODE"],
+                "SKU_TREE_PROPS" => $arParams["SKU_TREE_PROPS"],
+                "SKU_SORT_FIELD" => "name",
+                "SKU_SORT_ORDER" => "asc",
+                "SKU_SORT_FIELD2" => "sort",
+                "SKU_SORT_ORDER2" => "asc",
+                "TYPE_TEMPLATE" => "catalog_block",
+                "NARROW" => "FROM_THEME",
+                "ITEMS_OFFSET" => "FROM_THEME",
+                "TEXT_CENTER" => "FROM_THEME",
+                "IMG_CORNER" => "FROM_THEME",
+                "ELEMENT_IN_ROW" => "FROM_THEME",
+                "COUNT_ROWS" => "FROM_THEME",
+                "IMAGES_POSITION" => "FROM_THEME",
+                "SKIP_TABS" => "Y",
+            ),
+            false
+        );?>
+    </div>
+<?
+}
+?>

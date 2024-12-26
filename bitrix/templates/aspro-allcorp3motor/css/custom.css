@@ -197,6 +197,15 @@
 	grid-template-columns: repeat(auto-fill,minmax(364px,1fr));
 }
 
+.element-related-products {
+	position: relative;
+	left: -24px;
+	width: calc(100% + 48px);
+	margin-top: 30px;
+	/*margin-right: -24px;*/
+	/*margin-left: -24px;*/
+}
+
 @media (max-width: 340px) {
     .mobileheader__item--right-icons .line-block {
         justify-content: unset;
@@ -242,6 +251,16 @@
 	.calalog-all-link {
 		margin-top: 30px;
 		font-size: 18px;
+	}
+}
+
+@media (min-width: 992px) {
+	.element-related-products {
+		left: -32px;
+		width: calc(100% + 64px);
+		margin-top: 60px;
+		/*margin-right: -32px;*/
+		/*margin-left: -32px;*/
 	}
 }
 

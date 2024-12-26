@@ -7,6 +7,55 @@ if ($arParams['SHOW_PROPS'] == 'Y') {
 	$arParams['SHOW_GALLERY'] = 'N';
 }
 
+//if ($arParams['SHOW_ONE_PRODUCT_FROM_EACH_SECTION'] == 'Y') {
+//	$arResult['ITEMS'] = $sections = [];
+//	$sectionsCount = $arParams['COUNT_IN_LINE'];
+//	$sectionIteration = 1;
+//
+//	$obSections = CIBlockSection::GetList(
+//		array('SORT' => 'ASC'),
+//		array(
+//			'IBLOCK_ID' => $arParams['IBLOCK_ID'],
+//			'ACTIVE' => 'Y',
+//			'DEPTH_LEVEL' => 1,
+//			'CNT_ACTIVE' => 'Y',
+//		),
+//		true,
+//		array('ID', 'NAME'),
+//	);
+//	while ($resSection = $obSections->GetNext()) {
+//		if ($resSection['ELEMENT_CNT'] <= 0)
+//			continue;
+//
+//		$sections[] = $resSection;
+//
+//		if ($sectionIteration >= $sectionsCount)
+//			break;
+//
+//		$sectionIteration++;
+//	}
+//
+//	foreach ($sections as $i => $section) {
+//		$obElements = CIBlockElement::GetList(
+//			array('SORT' => 'ASC', 'NAME' => 'ASC'),
+//			array(
+//				'IBLOCK_ID' => $arParams['IBLOCK_ID'],
+//				'ACTIVE' => 'Y',
+//				'SECTION_ID' => $sections[$i]['ID'],
+//				'INCLUDE_SUBSECTIONS' => 'Y',
+//			),
+//			false,
+//			false,
+//			array('*', 'PROPERTY_*', 'DISPLAY_PROPERTIES')
+//		);
+//		while ($resElement = $obElements->GetNext()) {
+//			$arResult['ITEMS'][] = $resElement;
+//
+//			break;
+//		}
+//	}
+//}
+
 if (!empty($arResult['ITEMS'])) {?>
 
 	<?
